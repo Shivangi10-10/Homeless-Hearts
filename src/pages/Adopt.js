@@ -4,7 +4,7 @@ import './Adopt.css';
 const adopts = [
   { id: 1, age: 1, breed:"Golden Retriever", location: "Noida",image: 'https://grrep.org/wp-content/gallery/2018-07-28-miley/IMG_E3228.JPG' },
   { id: 2, age: 2, breed:"Amrit mahal", location: "Noida",image: 'https://breeds.okstate.edu/cattle/site-files/images/amrit_mahal.jpg' },
-  { id: 3, age: 1.5, breed:"Indian pariah dog", locatin: "Lucknow",image: 'https://i.redd.it/r2jk173kv2941.jpg' },
+  { id: 3, age: 1.5, breed:"Indian pariah dog", location: "Lucknow",image: 'https://i.redd.it/r2jk173kv2941.jpg' },
   { id: 4, age: 0.5, breed:"Gangatiri", location: "Faridabad",image: 'https://i.pinimg.com/originals/2a/88/1c/2a881c3988f91b0beb9f1e48895e85da.jpg' },
   { id: 5, age: 5, breed:"Himalyan Cat", location: "Delhi",image: 'https://cdn.fotofits.com/responsive/1200x1200/petzlover/gallery/img/l/himalayan-345233.jpg' },
   { id: 6, age: 2, breed:"Bully kutta", location:"Delhi", image: 'https://www.dogmal.com/wp-content/uploads/2017/03/bully-kutta-america.jpg'},
