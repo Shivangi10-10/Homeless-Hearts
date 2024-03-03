@@ -1,5 +1,6 @@
+// App.js
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom"; // Import Link
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import Home from "./pages/Home";
 import Footer from "./components/Footer";
@@ -17,15 +18,16 @@ import BlogNutrition from "./pages/BlogNutrition";
 import BlogTraining from "./pages/BlogTraining";
 import LoginForm from "./pages/LoginForm";
 import VolunteerDashboard from "./pages/VolunteerDashboard";
-
+import Todo from "./pages/Todo";
+import VetVisit from "./pages/VetVisit";
 const App = () => {
   const footerRef = useRef(null);
   return (
     <Router>
       <FooterContext.Provider value={footerRef}>
-        <NavBar />
         <Routes>
-          <Route path="*" element={<Home />} />
+          <Route path="*" element={<NavBar />} />
+          <Route path="/" element={<Home />} />
           <Route path="/Adopt" element={<Adopt />} />
           <Route path="/Donate" element={<Donate />} />
           <Route path="/Footer" element={<Footer />} />
@@ -37,18 +39,19 @@ const App = () => {
           <Route path="/GetStarted" element={<GetStarted />} />
           <Route path="/Button" element={<Button />} />
           <Route path="/ChatBot" element={<ChatBot />} />
-          <Route path="/LoginForm" element={<LoginForm />} /> 
+          <Route path="/LoginForm" element={<LoginForm />} />
           <Route path="/VolunteerDashboard" element={<VolunteerDashboard />} />
+          <Route path="/Todo" element={<Todo />} />
+          <Route path="/VetVisit" element={<VetVisit />} />
         </Routes>
         <Footer />
-        <Link to="/LoginForm"> {/* Link to LoginForm */}
-          <Button>Apply</Button> {/* Apply button */}
+        <Link to="/LoginForm">
+          <Button>Apply</Button>
         </Link>
-        <Link to="/VolunteerDashboard"> 
-          <Button>Login</Button> 
+        <Link to="/VolunteerDashboard">
+          <Button>Login</Button>
         </Link>
       </FooterContext.Provider>
-      <ChatBot />
     </Router>
   );
 };
