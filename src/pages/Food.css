@@ -98,3 +98,32 @@
     }
   }
   
+  /* Food.css */
+.food-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 2rem;
+  font-weight: bolder;
+}
+
+.food-image {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  width: 200px; /* Adjust the width as needed */
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.food-card {
+  background-color: #feece2;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  width: 60%;
+}
+
+/* Remaining CSS styles remain the same */
