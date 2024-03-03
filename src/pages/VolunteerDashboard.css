@@ -1,0 +1,70 @@
+/* VolunteerDashboard.css */
+.dashboard-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 100px auto;
+    margin-left: 350px;
+  }
+  
+  .left-panel {
+    width: 20%;
+  }
+  
+  .right-panel {
+    width: 75%;
+    padding: 20px;
+    background-color: #FEECE2;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+ 
+  
+  .task-list-btn {
+    float: right;
+    padding: 10px 20px;
+    background-color: #FFBE98;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .search-bar {
+    margin-top: 20px;
+  }
+  
+  .search-bar input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+  }
+  
+  .dashboard-options {
+    margin-top: 20px;
+  }
+  
+  .dashboard-card {
+    background-color: #F7DED0;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .dashboard-card img {
+    width: 30px;
+    margin-right: 10px;
+  }
+  
+  .dashboard-card h3 {
+    color: black;
+  }
+  
+  .dashboard-card p {
+    color: #333;
+  }
+  
