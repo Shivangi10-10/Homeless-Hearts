@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import './Vet.css';
 const Vet = () => {
  return (
-    <><h2>Volunteer Program Overview</h2>
+    <><h1>Volunteer Program Overview</h1>
 
     <div className="vet">
 
