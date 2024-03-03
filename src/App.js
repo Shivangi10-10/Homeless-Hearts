@@ -20,6 +20,7 @@ import LoginForm from "./pages/LoginForm";
 import VolunteerDashboard from "./pages/VolunteerDashboard";
 import Todo from "./pages/Todo";
 import VetVisit from "./pages/VetVisit";
+import Food from "./pages/Food";
 const App = () => {
   const footerRef = useRef(null);
   return (
@@ -43,6 +44,7 @@ const App = () => {
           <Route path="/VolunteerDashboard" element={<VolunteerDashboard />} />
           <Route path="/Todo" element={<Todo />} />
           <Route path="/VetVisit" element={<VetVisit />} />
+          <Route path="/Food" element={<Food />} />
         </Routes>
         <Footer />
         <Link to="/LoginForm">
