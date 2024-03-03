@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import './LoginForm.css';
 
 const LoginForm = () => {
+  const navigate = useNavigate(); // Initialize the useNavigate hook
   const [form, setForm] = useState({
     username: '',
     password: '',
@@ -19,6 +21,8 @@ const LoginForm = () => {
     e.preventDefault();
     console.log(form);
     // Form submission logic here
+    // After successful submission, navigate to VolunteerDashboard.js
+    navigate('/VolunteerDashboard');
   };
 
   return (
@@ -31,11 +35,11 @@ const LoginForm = () => {
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="username">Username</label>
-            <input type="text" name="username" id="username" value={form.username} onChange={handleChange} pattern="[A-Za-z0-9_]+" title="Username can include alphabets, digits, and underscores" required />
+            <input type="text" name="username" id="username" value={form.username} onChange={handleChange} required />
           </div>
           <div className="form-group">
             <label htmlFor="password">Password</label>
-            <input type="password" name="password" id="password" value={form.password} onChange={handleChange} pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" title="Password must contain at least one uppercase letter, one lowercase letter, one digit, one special character (@_$), and be at least 8 characters long" required />
+            <input type="password" name="password" id="password" value={form.password} onChange={handleChange} required />
           </div>
           <button type="submit">Login</button>
         </form>
