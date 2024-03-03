@@ -75,7 +75,7 @@ button:hover {
 }
 
 .image-div {
-  width: 70%;
+  width: 90%;
   height: 100%;
   margin: 0;
   background-size: cover;
@@ -86,10 +86,11 @@ button:hover {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  margin: 0%;
 }
 
 .login-form-container {
-  width: 50%; /* Adjusted width */
+  width: 40%; /* Adjusted width */
   padding: 40px; /* Increased padding */
   border-radius: 10px;
   background-color: #F7DED0;
