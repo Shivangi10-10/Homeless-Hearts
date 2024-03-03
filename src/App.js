@@ -16,6 +16,7 @@ import BlogFirstAid from "./pages/BlogFirstAid";
 import BlogNutrition from "./pages/BlogNutrition";
 import BlogTraining from "./pages/BlogTraining";
 import LoginForm from "./pages/LoginForm";
+import VolunteerDashboard from "./pages/VolunteerDashboard";
 
 const App = () => {
   const footerRef = useRef(null);
@@ -36,13 +37,17 @@ const App = () => {
           <Route path="/GetStarted" element={<GetStarted />} />
           <Route path="/Button" element={<Button />} />
           <Route path="/ChatBot" element={<ChatBot />} />
-          <Route path="/LoginForm" element={<LoginForm />} /> {/* Route for LoginForm */}
+          <Route path="/LoginForm" element={<LoginForm />} /> 
+          <Route path="/VolunteerDashboard" element={<VolunteerDashboard />} />
         </Routes>
         <Footer />
+        <Link to="/LoginForm"> {/* Link to LoginForm */}
+          <Button>Apply</Button> {/* Apply button */}
+        </Link>
+        <Link to="/VolunteerDashboard"> 
+          <Button>Login</Button> 
+        </Link>
       </FooterContext.Provider>
-      <Link to="/LoginForm"> {/* Link to LoginForm */}
-        <Button>Apply</Button> {/* Apply button */}
-      </Link>
       <ChatBot />
     </Router>
   );
