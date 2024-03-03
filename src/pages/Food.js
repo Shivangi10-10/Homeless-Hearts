@@ -1,4 +1,3 @@
-// Food.js
 import React, { useState } from 'react';
 import './Food.css';
 
@@ -30,6 +29,11 @@ const Food = () => {
 
   return (
     <div className="food-container">
+      <img
+        src="https://media.istockphoto.com/id/1369614743/vector/cute-jack-russell-terrier-puppy-peeking-cartoon-vector-illustration.jpg?s=612x612&w=0&k=20&c=dMxM-h5iol-gGsQByphc7_RSx2sd4NtSI4tDiG_p3TE="
+        alt="Jack Russell Terrier"
+        className="food-image"
+      />
       <div className="food-card">
         <h2 className="food-title">Food Collection & Distribution</h2>
         <div className="food-timeline">
