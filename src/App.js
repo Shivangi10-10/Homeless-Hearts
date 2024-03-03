@@ -1,4 +1,3 @@
-// App.js
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import NavBar from "./components/NavBar";
@@ -21,13 +20,15 @@ import VolunteerDashboard from "./pages/VolunteerDashboard";
 import Todo from "./pages/Todo";
 import VetVisit from "./pages/VetVisit";
 import Food from "./pages/Food";
+import Vet from "./pages/Vet";
+
 const App = () => {
   const footerRef = useRef(null);
   return (
     <Router>
+      <NavBar /> {/* NavBar outside Routes */}
       <FooterContext.Provider value={footerRef}>
         <Routes>
-          <Route path="*" element={<NavBar />} />
           <Route path="/" element={<Home />} />
           <Route path="/Adopt" element={<Adopt />} />
           <Route path="/Donate" element={<Donate />} />
@@ -45,6 +46,7 @@ const App = () => {
           <Route path="/Todo" element={<Todo />} />
           <Route path="/VetVisit" element={<VetVisit />} />
           <Route path="/Food" element={<Food />} />
+          <Route path="/Vet" element={<Vet />} />
         </Routes>
         <Footer />
         <Link to="/LoginForm">
