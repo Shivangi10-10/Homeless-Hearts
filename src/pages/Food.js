@@ -5,9 +5,12 @@ import './Food.css';
 const Food = () => {
   const [rewardWon, setRewardWon] = useState(false);
   const [foodTasks, setFoodTasks] = useState([
-    { id: 1, location: 'Source', task: 'Collect Food', completed: false },
-    { id: 3, location: 'Source', task: 'Collect Food', completed: false },
-    { id: 4, location: 'Destination', task: 'Distribute Food', completed: false },
+    { id: 1, location: 'Source', task: 'Sector 93A', completed: false },
+    { id: 2, location: 'Source', task: 'Sector 93B', completed: false },
+    { id: 3, location: 'Source', task: 'Greater Noida', completed: false },
+    { id: 4, location: 'Source', task: 'Chandini Chowk', completed: false },
+    { id: 5, location: 'Source', task: 'Sector 137', completed: false },
+    { id: 6, location: 'Destination', task: 'Sector 62', completed: false },
   ]);
 
   const handleCheckboxChange = (taskId) => {
