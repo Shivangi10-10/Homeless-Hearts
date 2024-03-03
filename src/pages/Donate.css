@@ -36,8 +36,8 @@
   .donate-header h2{
     text-align: center;
     position: relative;
-    color: white;
-    text-shadow: black 10px 0 10px;
+    color: black;
+    text-shadow: white 10px 0 10px;
     font-size: 8rem;
     font-weight: bold;
     text-align: center;
