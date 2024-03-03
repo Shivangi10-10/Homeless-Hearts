@@ -26,8 +26,9 @@ const App = () => {
   const footerRef = useRef(null);
   return (
     <Router>
-      <NavBar /> {/* NavBar outside Routes */}
+       {/* NavBar outside Routes */}
       <FooterContext.Provider value={footerRef}>
+      <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/Adopt" element={<Adopt />} />
@@ -56,6 +57,8 @@ const App = () => {
           <Button>Login</Button>
         </Link>
       </FooterContext.Provider>
+      <Button/>
+      <ChatBot/>
     </Router>
   );
 };
