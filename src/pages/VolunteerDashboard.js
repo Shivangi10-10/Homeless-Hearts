@@ -30,7 +30,7 @@ const VolunteerDashboard = () => {
             <h3>Food Collection & Distribution</h3>
             <p>Description of Food Collection & Distribution</p>
           </div>
-          <div className="dashboard-card" onClick={() => navigate('/AlertsCheck')}>
+          <div className="dashboard-card" onClick={() => navigate('/Vet')}>
             <h3>Alerts Check</h3>
             <p>Description of Alerts Check</p>
           </div>
