@@ -1,62 +1,129 @@
-import React, { useState } from 'react';
-import './Food.css';
-
-const Food = () => {
-  const [rewardWon, setRewardWon] = useState(false);
-  const [foodTasks, setFoodTasks] = useState([
-    { id: 1, location: 'Source', task: 'Sector 93A', completed: false },
-    { id: 2, location: 'Source', task: 'Sector 93B', completed: false },
-    { id: 3, location: 'Source', task: 'Greater Noida', completed: false },
-    { id: 4, location: 'Source', task: 'Chandini Chowk', completed: false },
-    { id: 5, location: 'Source', task: 'Sector 137', completed: false },
-    { id: 6, location: 'Destination', task: 'Sector 62', completed: false },
-  ]);
-
-  const handleCheckboxChange = (taskId) => {
-    const updatedTasks = foodTasks.map((task) =>
-      task.id === taskId ? { ...task, completed: !task.completed } : task
-    );
-    setFoodTasks(updatedTasks);
-    checkAllTasksCompleted(updatedTasks);
-  };
-
-  const checkAllTasksCompleted = (tasks) => {
-    const allCompleted = tasks.every((task) => task.completed);
-    if (allCompleted) {
-      setRewardWon(true);
+/* Food.css */
+.food-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 2rem;
+    font-weight: bolder;
+  }
+  
+  .food-card {
+    background-color: #feece2;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    width: 60%;
+  }
+  
+  .food-title {
+    color: #ffbe98;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+  }
+  
+  .food-timeline {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .food-task {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .food-task.completed {
+    color: #e2bfb3;
+    font-size: 35px;
+  }
+  
+  .food-task input[type='checkbox'] {
+    margin-right: 10px;
+    /* Change tick color */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border: 2px solid #000;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+  }
+  
+  .food-task input[type='checkbox']:checked {
+    background-color: #ffbe98; /* Yellow for source */
+  }
+  
+  .food-task input[type='checkbox']:checked + p {
+    color: #ffbe98;
+  }
+  
+  .source {
+    color: black;
+    font-size: large;
+  }
+  
+  .destination {
+    color: black;
+    font-size: large;
+  }
+  
+  .source.checked {
+    color: orange;
+  }
+  
+  /* Apply green color to destination when checked */
+  .food-task .destination.checked {
+    color: green !important; /* Use !important to ensure precedence */
+  }
+  
+  .reward-message {
+    text-align: center;
+    margin-top: 20px;
+    color: #000; /* Black */
+    font-weight: bold;
+    font-size: 2.4rem;
+    animation: rewardMessageAnimation 2s ease-in-out forwards;
+  }
+  
+  @keyframes rewardMessageAnimation {
+    0% {
+      opacity: 0;
     }
-  };
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  /* Food.css */
+.food-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 2rem;
+  font-weight: bolder;
+}
 
-  return (
-    <div className="food-container">
-      <img
-        src="https://media.istockphoto.com/id/1369614743/vector/cute-jack-russell-terrier-puppy-peeking-cartoon-vector-illustration.jpg?s=612x612&w=0&k=20&c=dMxM-h5iol-gGsQByphc7_RSx2sd4NtSI4tDiG_p3TE="
-        alt="Jack Russell Terrier"
-        className="food-image"
-      />
-      <div className="food-card">
-        <h2 className="food-title">Food Collection & Distribution</h2>
-        <div className="food-timeline">
-          {foodTasks.map((task) => (
-            <div
-              key={task.id}
-              className={`food-task ${task.completed ? 'completed' : ''}`}
-            >
-              <input
-                type="checkbox"
-                checked={task.completed}
-                onChange={() => handleCheckboxChange(task.id)}
-              />
-              <p className={`${task.location === 'Source' ? 'source' : 'destination'} ${task.completed ? 'checked' : ''}`}>
-                {task.location} - {task.task}
-              </p>
-            </div>
-          ))}
-        </div>
-        {rewardWon && <p className="reward-message">You have won a Reward!</p>}
-      </div>
-    </div>
-  );
-};
+.food-image {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  width: 200px; /* Adjust the width as needed */
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
 
-export default Food;
+.food-card {
+  background-color: #feece2;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  width: 60%;
+}
+
+/* Remaining CSS styles remain the same */
