@@ -1,56 +1,55 @@
-import React, {useState} from 'react';
-import './Vet.css';
-const Vet = () => {
- return (
-    <>
-    <div className="vet">
-            <div className="vet-visit-title">
-                <h3>Emergency Contacts</h3>
-            </div>
+import React, { useState } from 'react';
+import './VetVisit.css';
 
-            <div className='vet-visit-body'>
-                <div className="vet-box">
-                <a href='http://sanjaygandhianimalcarecentre.org/contact-us.html'>
-                <h3>Sanjay Gandhi Animal Care Centre (SGACC)</h3>
-                <p>All-animal shelter and 24x7 ambulance service. </p>
-                <p><b>Address:</b> Shivaji College Rd, Shivaji Enclave, Raja Garden, New Delhi, Delhi 110027</p>
-                <p><b>Phone:</b> 011 2544 8062/25448062</p>
-                <p><b>Email:</b> sgacc1980@gmail.com</p>
-                </a>
-                </div>
-            
+const vets = [
+  { id: 1, name: "Miley", location: "Noida", image: 'https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2F3f2e02b097fb725604aee00dede93f77.cdn.bubble.io%2Ff1670652907563x387661899070705900%2FIndian%2520Vet%2520abroad.jpg?w=512&h=341&auto=compress&dpr=2.5&fit=max' },
+  { id: 2, name:"Ram", location: "Noida", image: 'https://img.freepik.com/premium-photo/indian-veterinarian-male-doctor-with-dog-inside-clinic-with-happy-expression_466689-95911.jpg' },
+  { id: 3, name:"Shri", location: "Lucknow", image: 'https://indspireme.in/wp-content/uploads/2017/06/photo-by-indian-express.jpg' },
+  { id: 4, name:"Ganga", location: "Faridabad", image: 'https://www.edumate.tv/wp-content/uploads/2020/06/iStock_000009819502Small-e1646816406498.jpg' },
+  { id: 5, name:"Radha", location: "Delhi", image: 'https://www.ivaofficial.org/wp-content/uploads/2021/10/abt-image.png' },
+];
 
-            <div className="vet-box">
-                <a href='https://development.delhi.gov.in/development/24-x-7-emergency-services-veterinary-hospital-tis-hazari'>
-                <h3>Veterinary Hospital Tis Hazari</h3>
-                <p>24x7 Government emergency services in New Delhi</p>
-                <p><b>Address:</b> 10243, Library Road, Railway Colony, Tis Hazari, Delhi-110006</p>
-                <p><b>Government animal helpline number:</b> 011-23967555</p>
-                </a>
-            </div>
+const VetVisit = () => {
+  const [searchTerm, setSearchTerm] = useState('');
 
-            <div className="vet-box">
-                <a href='https://www.facebook.com/smartsanctuary/'>
-                <h3>Sophie Memorial Animal Relief Trust (S. M. A. R. T.)</h3>
-                <p>Home for old, disbaled, special needs dogs.</p>
-                <p><b>Address:</b> 141, Block B, Omicron II, Greater Noida, Uttar Pradesh, -201310</p>
-                <p><b>Phone:</b> 70427 23301</p>
-                </a>
-            </div>
+  const handleSearchChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
 
-            <div className="vet-box">
-                <a href='https://allcreaturesgreatandsmall.in/contact-acgs/'>
-                <h3>All Creatures Great and Small (ACGS)</h3>
-                <p>Full-fledged shelter for all animals and have facility of birth control</p>
-                <p><b>Address:</b> ACGS SANCTUARY, Silakhari Village, P.O. Dhouj – Tehsil & District Faridabad. Haryana 121004</p>
-                <p><b>Phone:</b> +91 99103 08374</p>
-                <p><b>Email Id:</b> gopalan.anjali@gmail.com</p>
-                </a>
+  const filteredVets = vets.filter((vet) =>
+    vet.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  return (
+    <div className='amatic-sc-regular'>
+      <div className="vet-visit-container">
+        <h2 className="vet-visit-title">Choose the pet saviour now...</h2>
+
+        <div className="search-bar">
+          <input
+            type="text"
+            placeholder="Search by name..."
+            value={searchTerm}
+            onChange={handleSearchChange}
+          />
+        </div>
+
+        <div className="vet-visit-grid">
+          {filteredVets.map(vet => (
+            <div key={vet.id} className="vet-visit-card">
+              <img src={vet.image} className="vet-visit-image" alt={vet.name} />
+
+              <div className="vet-visit-info">
+                <p>ID: {vet.id}</p>
+                <p>Name: {vet.name}</p>
+                <p>Location: {vet.location}</p>
+              </div>
             </div>
-            </div>
+          ))}
+        </div>
+      </div>
     </div>
-    </>
- );
+  );
 };
 
-export default Vet;
+export default VetVisit;
