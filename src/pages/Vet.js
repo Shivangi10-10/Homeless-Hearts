@@ -2,10 +2,13 @@ import React, {useState} from 'react';
 import './Vet.css';
 const Vet = () => {
  return (
-    <><h1>Volunteer Program Overview</h1>
-
+    <>
     <div className="vet">
+            <div className="vet-visit-title">
+                <h3>Emergency Contacts</h3>
+            </div>
 
+            <div className='vet-visit-body'>
                 <div className="vet-box">
                 <a href='http://sanjaygandhianimalcarecentre.org/contact-us.html'>
                 <h3>Sanjay Gandhi Animal Care Centre (SGACC)</h3>
@@ -43,6 +46,7 @@ const Vet = () => {
                 <p><b>Phone:</b> +91 99103 08374</p>
                 <p><b>Email Id:</b> gopalan.anjali@gmail.com</p>
                 </a>
+            </div>
             </div>
     </div>
     </>
