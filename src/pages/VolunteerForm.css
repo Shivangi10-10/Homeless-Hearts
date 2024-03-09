@@ -72,3 +72,13 @@ body{
 .volunteer-form-container button:hover {
   background-color: #FFBE98;
 }
+
+  .login {
+    font-size: 20px;
+    margin-top: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    color: black;
+  }
+
