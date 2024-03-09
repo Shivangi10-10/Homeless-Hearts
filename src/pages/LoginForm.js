@@ -1,27 +1,24 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import './LoginForm.css';
+import axios from 'axios';
+
 
 const LoginForm = () => {
   const navigate = useNavigate(); // Initialize the useNavigate hook
-  const [form, setForm] = useState({
-    username: '',
-    password: '',
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setForm({
-      ...form,
-      [name]: value,
-    });
-  };
+  const [email, setEmail] = useState()
+  const [password, setPassword] = useState()
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(form);
-
-    navigate('/VolunteerDashboard');
+    axios.post('http://localhost:3001/login', { email,password})
+      .then(result =>{
+         console.log(result)
+         if(result.data === "Success"){
+      navigate("/VolunteerDashboard")
+         }
+      })
+      .catch(err => console.log(err))
   };
 
   return (
@@ -34,12 +31,12 @@ const LoginForm = () => {
         <h2 className="form-title">Volunteer Login Form</h2>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
-            <label htmlFor="username">Username</label>
-            <input type="text" name="username" id="username" value={form.username} onChange={handleChange} required />
+            <label htmlFor="username">Email</label>
+            <input type="text" name="email" id="email"  onChange={(e) => setEmail(e.target.value)} required />
           </div>
           <div className="form-group">
             <label htmlFor="password">Password</label>
-            <input type="password" name="password" id="password" value={form.password} onChange={handleChange} required />
+            <input type="password" name="password" id="password" onChange={(e) => setPassword(e.target.value)} required />
           </div>
           <button type="submit" style={{fontFamily: 'amatic sc'}}>Login</button>
         </form>
